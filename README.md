@@ -7,8 +7,8 @@ Elasticsearch 1.5.2 + Kibana 4.0.2 in a docker container for a fast throwaway en
 Use this if you don't care about Elasticsearch data persisting across container destroy/restart/etc.
 
 ```
-docker pull devdb/kibana:latest
-docker run -d --name kibana -p 5601:5601 -p 9200:9200 devdb/kibana
+docker pull erwasambo/docker-kibana:latest
+docker run -d --name kibana -p 5601:5601 -p 9200:9200 erwasambo/docker-kibana
 ```
 
 You can create an index and mappings using:
@@ -30,8 +30,8 @@ Then, you can point your browser to `http://localhost:5601` and the Kibana4 dash
 **Warning**: The data in Elasticsearch is lost when the container is destroyed. If you want the data to persist, then use:
 
 ```
-docker pull devdb/kibana:latest
-docker run -d --name kibana -p 5601:5601 -v /tmp/kibana:/opt/elasticsearch/data devdb/kibana
+docker pull erwasambo/docker-kibana:latest
+docker run -d --name kibana -p 5601:5601 -v /tmp/kibana:/opt/elasticsearch/data erwasambo/docker-kibana
 ```
 
 where `/tmp/kibana` is where the data files are stored on your host machine.
