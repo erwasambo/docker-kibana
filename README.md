@@ -31,7 +31,7 @@ Then, you can point your browser to `http://localhost:5601` and the Kibana4 dash
 
 ```
 docker pull erwasambo/docker-kibana:latest
-docker run -d --name kibana -p 5601:5601 -v /tmp/kibana:/opt/elasticsearch/data erwasambo/docker-kibana
+docker run -d --name kibana -p 5601:5601 -p 9200:9200 -v /tmp/kibana:/opt/elasticsearch/data erwasambo/docker-kibana
 ```
 
 where `/tmp/kibana` is where the data files are stored on your host machine.
